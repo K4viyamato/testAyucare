@@ -42,7 +42,7 @@ import { Turn as Hamburger } from 'hamburger-react'
   return (
     
     
-      <Navbar className="sticky top-0 z-10 h-max max-w-full  py-1 px-4 lg:px-6 lg:py-2  bg-white border-0 ">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full  py-1 px-4 lg:px-6 lg:py-2  bg-black border-0 ">
         <div className="flex items-center justify-between text-blueGray-900">
           <Typography
             as="span"
