@@ -14,7 +14,7 @@ const Home = () => {
 
     <>
     
-    <section className="bgpic relative overflow-hidden bg-cover text-center  h-[90.831vh] w-full mt-[-12px]">
+    <section className="bgpic relative overflow-hidden bg-cover text-center  h-[105vh] w-full mt-[-12px]">
     <img src={bg1} alt="bgpic" className=" w-full h-[100%] object-cover p-0 " />
 
     <div className="bgeffect absolute inset-0 overflow-hidden bg-fixed bg-black/40 bg-blend-multiply">
