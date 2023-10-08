@@ -1,5 +1,5 @@
 import React from 'react'
-import bg1 from '../../images/bg/bg1.png'
+import bg1 from '../../images/bg/bg1.jpg'
 import HomeAbout from './HomeAbout';
 import HomeService from './HomeService';
 
