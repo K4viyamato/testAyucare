@@ -26,7 +26,7 @@ import { EffectCards } from 'swiper/modules';
 
 
 import UseAnimations from 'react-useanimations';
-import { textEffect0, textEffect1, textEffect2 } from './Effects';
+import { imageEffectY, textEffect0, textEffect1, textEffect2 } from './Effects';
 
 
 import arrowDown from 'react-useanimations/lib/arrowDown'
@@ -70,6 +70,16 @@ const HomeAbout = () => {
             initial='initial'
             whileInView='whileInView'
             viewport={{ once: true }}
+  
+            whileHover={{
+              scale:1.1,
+              
+            }}
+            whileTap={{
+              scale:0.9,
+              
+            }}
+            
             >
             <NavLink to='/about' className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden tracking-tighter text-white border-2 border-white/30 rounded-[10px] group hover:border-white/0 duration-100">
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56 "></span>
@@ -85,7 +95,12 @@ const HomeAbout = () => {
 
 
 
-        <div className=''>
+        <motion.div className=''
+        variants= {imageEffectY}
+        initial='initial'
+        whileInView='whileInView'
+        viewport={{ once: true }}
+        >
             
 
         <Swiper
@@ -93,6 +108,8 @@ const HomeAbout = () => {
         grabCursor={true}
         modules={[EffectCards]}
         className="xl:w-[500px]  lg:w-[400px]  md:w-[450px] w-[300px]"
+
+        
       >
 
         
@@ -109,7 +126,7 @@ const HomeAbout = () => {
 
 
 
-        </div>
+        </motion.div>
     </div>
 </section>
   )

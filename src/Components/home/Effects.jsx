@@ -49,5 +49,22 @@ const textEffect0 = {
 
     }
   }
+  const imageEffectY = {
+    initial:{
+      opacity:0,
+      
+    },
+    whileInView:{
 
-  export {textEffect0 , textEffect1, textEffect2}
+      opacity:1,
+      
+      
+      transition:{
+        
+        duration:0.6,
+      }
+
+    }
+  }
+
+  export {textEffect0 , textEffect1, textEffect2, imageEffectY}

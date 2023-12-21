@@ -12,8 +12,10 @@ import { textEffect0, textEffect1, textEffect2 } from './Effects';
 import arrowDown from 'react-useanimations/lib/arrowDown'
 import { NavLink } from 'react-router-dom';
 
-const Home = () => {
 
+const Home = () => {
+  
+  const customNavLink = motion(NavLink);
 
   return (
 
@@ -24,8 +26,8 @@ const Home = () => {
     <section  className="bgpic relative overflow-hidden bg-cover text-center  h-[115vh] w-full mt-[-12px]">
     <motion.img src={bg1} alt="bgpic" className=" w-full h-[100%] object-cover p-0 " 
       whileInView={{
-        scale:1.5,
-        transition:{duration:50, repeat: Infinity}
+        scale:1.4,
+        transition:{duration:100, repeat: Infinity}
       }}
       TRA
     />
@@ -55,18 +57,34 @@ const Home = () => {
             
           </motion.p>
 
-          <motion.NavLink to='/contact' className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden tracking-tighter text-white border-2 border-white/30 rounded-[50px] group hover:border-white/0 duration-100"
+          <motion.div 
           variants= {textEffect2}
           initial='initial'
           whileInView='whileInView'
           viewport={{ once: true }}
+
+          whileHover={{
+            scale:1.1,
+            
+          }}
+          whileTap={{
+            scale:0.9,
+            
+          }}
+          
+          >
+
+          <NavLink to='/contact' className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden tracking-tighter text-white border-2 border-white/30 rounded-[50px] group hover:border-white/0 duration-100"
+          
+          
           
           >
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56 "></span>
 
             <span className="relative text-white font-semi-bold text-[20px]">Contact Us</span>
             <UseAnimations animation={arrowDown}  strokeColor='#fff' speed={2} size={34} className='rotate-[270deg] ml-2 mt-1'/>
-            </motion.NavLink>
+            </NavLink>
+            </motion.div>
 
         </div>
       </motion.div>
