@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import {motion, useInView} from 'framer-motion'
 
 //images
 
@@ -34,6 +36,72 @@ import { NavLink } from 'react-router-dom';
 
 const HomeAbout = () => {
 
+  const ref = useRef(null);
+  const isInView =useInView(ref);
+
+
+
+  const textEffect0 = {
+    initial:{
+      opacity:0,
+      y:75
+    },
+    whileInView:{
+
+      opacity:1,
+      y:0,
+      
+      transition:{
+        delay:0.25,
+        duration:0.5,
+      }
+
+    },
+    viewport:{
+      once: true
+    }
+  }
+  const textEffect1 = {
+    initial:{
+      opacity:0,
+      y:75
+    },
+    whileInView:{
+
+      opacity:1,
+      y:0,
+      
+      transition:{
+        delay:0.6,
+        duration:0.5,
+      }
+
+    },
+    viewport:{
+      once: true
+    }
+  }
+  const textEffect2 = {
+    initial:{
+      opacity:0,
+      y:75
+    },
+    whileInView:{
+
+      opacity:1,
+      y:0,
+      
+      transition:{
+        delay:0.7,
+        duration:0.6,
+      }
+
+    },
+    viewport:{
+      once: true
+    }
+  }
+
 
 
     let styles = 'rounded-2xl';
@@ -43,25 +111,40 @@ const HomeAbout = () => {
 
 
   return (
-    <section className="bg-green-bg overflow-hidden">
+    <section  className="bg-green-bg overflow-hidden">
     <div className="py-[150px] px-5 md:px-10 mx-auto max-w-screen-xl lg:py-16 grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 ">
         <div className="flex flex-col lg:items-start  md:items-center items-center m-auto">
 
 
-            <h1 className="mb-4 text-4xl font-bold tracking-wide leading-none  text-white  md:text-5xl lg:text-6xl text-center md:text-left">
+            <motion.h1 className="mb-4 text-4xl font-bold tracking-wide leading-none  text-white  md:text-5xl lg:text-6xl text-center md:text-left"
+            variants= {textEffect0}
+            initial='initial'
+            whileInView='whileInView'
+            viewport='viewport'
+            >
 
                 About Ayucare
 
-            </h1>
+            </motion.h1>
 
 
-            <p className="mb-8 px-9 md:px-10 lg:px-0 text-lg font-normal text-gray-500 lg:text-xl  text-center md:text-center lg:text-left ">
+            <motion.p className="mb-8 px-9 md:px-10 lg:px-0 text-lg font-normal text-gray-500 lg:text-xl  text-center md:text-center lg:text-left "
+            variants= {textEffect1}
+            initial='initial'
+            whileInView='whileInView'
+            viewport='viewport'
+            >
             Ayu Care is your dedicated sanctuary for Ayurvedic healing and holistic wellness. With a deep-rooted belief in the power of Ayurveda, we are committed to helping you achieve optimal health and balance in mind, body, and spirit.
-            </p>
+            </motion.p>
 
 
 
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 w-[200px] ">
+            <motion.div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 w-[200px] "
+            variants= {textEffect2}
+            initial='initial'
+            whileInView='whileInView'
+            viewport='viewport'
+            >
             <NavLink to='/about' className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden tracking-tighter text-white border-2 border-white/30 rounded-[10px] group hover:border-white/0 duration-100">
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56 "></span>
 
@@ -69,7 +152,7 @@ const HomeAbout = () => {
             <UseAnimations animation={arrowDown}  strokeColor='#fff' speed={2} size={34} className='rotate-[270deg] ml-2 mt-1'/>
             </NavLink>
                  
-            </div>
+            </motion.div>
 
 
         </div>
