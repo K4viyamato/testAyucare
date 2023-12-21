@@ -1,8 +1,8 @@
-import React, {useRef} from 'react'
+import React from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {motion, useInView} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 //images
 
@@ -15,8 +15,6 @@ import pic5 from '../../images/swiper/Untitled-5.jpg'
 import pic6 from '../../images/swiper/Untitled-6.jpg'
 
 
-import leaf from '../../images/bgdrop/leaf.png'
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -27,8 +25,8 @@ import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
 
 
-
 import UseAnimations from 'react-useanimations';
+import { textEffect0, textEffect1, textEffect2 } from './Effects';
 
 
 import arrowDown from 'react-useanimations/lib/arrowDown'
@@ -36,79 +34,7 @@ import { NavLink } from 'react-router-dom';
 
 const HomeAbout = () => {
 
-  const ref = useRef(null);
-  const isInView =useInView(ref);
-
-
-
-  const textEffect0 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.25,
-        duration:0.5,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-  const textEffect1 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.6,
-        duration:0.5,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-  const textEffect2 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.7,
-        duration:0.6,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-
-
-
     let styles = 'rounded-2xl';
-
-
-
-
 
   return (
     <section  className="bg-green-bg overflow-hidden">
@@ -120,7 +46,7 @@ const HomeAbout = () => {
             variants= {textEffect0}
             initial='initial'
             whileInView='whileInView'
-            viewport='viewport'
+            viewport={{ once: true }}
             >
 
                 About Ayucare
@@ -132,7 +58,7 @@ const HomeAbout = () => {
             variants= {textEffect1}
             initial='initial'
             whileInView='whileInView'
-            viewport='viewport'
+            viewport={{ once: true }}
             >
             Ayu Care is your dedicated sanctuary for Ayurvedic healing and holistic wellness. With a deep-rooted belief in the power of Ayurveda, we are committed to helping you achieve optimal health and balance in mind, body, and spirit.
             </motion.p>
@@ -143,7 +69,7 @@ const HomeAbout = () => {
             variants= {textEffect2}
             initial='initial'
             whileInView='whileInView'
-            viewport='viewport'
+            viewport={{ once: true }}
             >
             <NavLink to='/about' className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden tracking-tighter text-white border-2 border-white/30 rounded-[10px] group hover:border-white/0 duration-100">
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56 "></span>

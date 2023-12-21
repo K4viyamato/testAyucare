@@ -6,78 +6,13 @@ import HomeService from './HomeService';
 import UseAnimations from 'react-useanimations';
 import {motion} from 'framer-motion'
 
+import { textEffect0, textEffect1, textEffect2 } from './Effects';
+
 
 import arrowDown from 'react-useanimations/lib/arrowDown'
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-
-  
-
-
-
-  const textEffect0 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.25,
-        duration:0.5,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-  const textEffect1 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.6,
-        duration:0.5,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-  const textEffect2 = {
-    initial:{
-      opacity:0,
-      y:75
-    },
-    whileInView:{
-
-      opacity:1,
-      y:0,
-      
-      transition:{
-        delay:0.7,
-        duration:0.6,
-      }
-
-    },
-    viewport:{
-      once: true
-    }
-  }
-
-
 
 
   return (
@@ -87,7 +22,13 @@ const Home = () => {
     <>
     
     <section  className="bgpic relative overflow-hidden bg-cover text-center  h-[115vh] w-full mt-[-12px]">
-    <img src={bg1} alt="bgpic" className=" w-full h-[100%] object-cover p-0 " />
+    <motion.img src={bg1} alt="bgpic" className=" w-full h-[100%] object-cover p-0 " 
+      whileInView={{
+        scale:1.5,
+        transition:{duration:50, repeat: Infinity}
+      }}
+      TRA
+    />
     <div className="bgeffect absolute inset-0 overflow-hidden bg-fixed bg-black/40 bg-blend-multiply">
       <motion.div className="flex h-full items-center justify-center">
         <div className="text-white">
@@ -97,7 +38,7 @@ const Home = () => {
           variants= {textEffect0}
           initial='initial'
           whileInView='whileInView'
-          viewport='viewport'
+          viewport={{ once: true }}
           >
           Discover the Healing Power of Ayurveda
           </motion.h1>
@@ -106,7 +47,7 @@ const Home = () => {
           variants= {textEffect1}
           initial='initial'
           whileInView='whileInView'
-          viewport='viewport'
+          viewport={{ once: true }}
           >
             
 
@@ -118,7 +59,7 @@ const Home = () => {
           variants= {textEffect2}
           initial='initial'
           whileInView='whileInView'
-          viewport='viewport'
+          viewport={{ once: true }}
           
           >
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56 "></span>
