@@ -85,6 +85,8 @@ const HomeAbout = () => {
         modules={[EffectCards]}
         className="xl:w-[500px]  lg:w-[400px]  md:w-[450px] w-[300px]"
       >
+
+        
         
         <SwiperSlide><img src={pic1} className={styles}/></SwiperSlide>
         <SwiperSlide><img src={pic2} className={styles}/></SwiperSlide>

@@ -31,7 +31,7 @@ const Home = () => {
                 Our experienced Ayurvedic practitioners offer a wide range of services to help you achieve your wellness goals, including personalized consultations, herbal remedies, traditional therapies, and wellness services.
               </span> */}
 
-              Your Path to Holistic Wellness...
+              Your Path to Holistic Wellness....
             
           </p>
 
